@@ -1,0 +1,178 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Little Memories ♡</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <div class="floating-hearts" aria-hidden="true">♡ ♥ ♡ ♥ ♡</div>
+
+  <main class="app">
+
+    <!-- HALAMAN 1: PIN -->
+    <section id="pinPage" class="page active">
+      <div class="ribbon">🎀</div>
+      <p class="eyebrow">A LITTLE SURPRISE FOR YOU</p>
+      <h1>Our Little<br><span>Love Story</span></h1>
+      <p class="description">
+        Ada kejutan kecil yang sudah aku siapkan khusus untukmu.
+        Masukkan PIN rahasianya, yaa ♡
+      </p>
+
+      <form id="pinForm">
+        <label for="pinInput">Your Secret PIN</label>
+        <input
+          id="pinInput"
+          type="password"
+          inputmode="numeric"
+          maxlength="6"
+          placeholder="••••••"
+          autocomplete="off"
+          required
+        >
+        <button class="primary-btn" type="submit">
+          Open My Surprise ♡
+        </button>
+      </form>
+
+      <p id="pinMessage" class="feedback" aria-live="polite"></p>
+    </section>
+
+    <!-- HALAMAN 2: GAME -->
+    <section id="gamePage" class="page">
+      <div class="big-emoji">🧩</div>
+      <p class="eyebrow">ONE LITTLE CHALLENGE</p>
+      <h1>Upss, PIN-nya salah!</h1>
+      <p class="description">
+        Jangan menyerah, sayang. Jawab 3 soal ini untuk membuka kenangan kita 💗
+      </p>
+
+      <div class="progress">
+        Soal <span id="questionNumber">1</span> dari 3
+      </div>
+
+      <div class="quiz-card">
+        <h2 id="questionText">Berapa hasil 12 × 4?</h2>
+
+        <form id="answerForm">
+          <input
+            id="answerInput"
+            type="number"
+            placeholder="Masukkan jawaban..."
+            required
+          >
+          <button class="primary-btn" type="submit">
+            Periksa Jawaban ✨
+          </button>
+        </form>
+
+        <p id="gameMessage" class="feedback" aria-live="polite"></p>
+      </div>
+    </section>
+
+    <!-- HALAMAN 3: EMPAT FOTO KENANGAN -->
+    <section id="memoriesPage" class="page memories-page">
+      <p class="eyebrow">OUR LITTLE WORLD ♡</p>
+      <h1>Our Sweet Memories</h1>
+      <p class="description">
+        Empat kenangan kecil yang selalu punya tempat spesial di hatiku.
+      </p>
+
+      <div class="memory-counter">
+        Memory <span id="memoryNumber">1</span> of 4
+      </div>
+
+      <article class="memory-card">
+        <div class="memory-photo-frame">
+          <img id="memoryPhoto" src="asset/foto1.jpg" //masukkan foto kamu
+               alt="Foto kenangan kita">
+        </div>
+
+        <div class="memory-details">
+          <p class="memory-label" id="memoryLabel">MEMORY NO. 01</p>
+          <h2 id="memoryTitle">A Little Moment</h2>
+          <p id="memoryCaption">
+            Salah satu momen sederhana yang selalu aku ingat.
+          </p>
+        </div>
+      </article>
+
+      <div class="memory-navigation">
+        <button id="prevMemory" class="secondary-btn" type="button">
+          ← Previous
+        </button>
+        <button id="nextMemory" class="primary-btn" type="button">
+          Next Memory →
+        </button>
+      </div>
+
+      <div id="memoryDots" class="memory-dots" aria-label="Posisi foto">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </div>
+
+      <!-- Muncul setelah foto keempat -->
+      <div id="specialSongPrompt" class="special-prompt" hidden>
+        <div class="big-emoji">🎁</div>
+        <h2>Masih ada satu kejutan lagi!</h2>
+        <p>
+          Ayo klik tombol ini, di dalamnya ada lagu spesial untukmu ♡
+        </p>
+        <button id="goToMusic" class="primary-btn" type="button">
+          Open Your Special Song 🎵
+        </button>
+      </div>
+    </section>
+
+    <!-- HALAMAN 4: PIRINGAN MUSIK -->
+    <section id="musicPage" class="page music-page">
+      <p class="eyebrow">A SONG JUST FOR YOU</p>
+      <h1>Our Special Song</h1>
+      <p class="description">
+        Putar lagu ini dan biarkan setiap nadanya menjadi kenangan kita. 💗
+      </p>
+
+      <div class="vinyl" id="vinyl">
+        <div class="vinyl-center">
+          <img src="asset/foto2.png"
+               alt="Foto pasangan"
+               id="vinylPhoto">
+          <span class="vinyl-hole"></span>
+        </div>
+      </div>
+
+      <div class="track-info">
+        <h2 id="songTitle">Our Favorite Song ♫</h2>
+        <p>Dedicated to my favorite person ♡</p>
+      </div>
+
+      <audio id="birthdayMusic" src="asset/lagu.mp3" preload="metadata" loop>
+      </audio>
+
+      <div class="music-controls">
+        <button id="playMusic" class="play-btn" type="button"
+                aria-label="Putar lagu">
+          ▶
+        </button>
+      </div>
+
+      <p id="musicMessage" class="feedback" aria-live="polite">
+        Tekan tombol Play untuk memulai lagu ♡
+      </p>
+
+      <button id="backToMemories" class="secondary-btn" type="button">
+        ← Kembali ke kenangan
+      </button>
+    </section>
+
+  </main>
+
+</body>
+</html>
